@@ -19,6 +19,7 @@
 - Updating memory limits plus other enhancements for thanos-compactor
 - Adding Cross zone load balancing and graceful shutdown to nginx
 - Upgrade External DNS to v0.14.2
+- Update RBAC for p14c-bootstrap to allow ops on ingress resources
 
 _Changes:_
 
@@ -42,6 +43,7 @@ _Changes:_
 - [X] PDO-8085 Restrict PingFederate and PingAccess heartbeat response
 - [X] PDO-8150 Improve Stability and Shutdown Handling
 - [X] PDO-8194 Upgrade External DNS to v0.14.2
+- [X] PDO-7073 Update RBAC for p14c-bootstrap to allow ops on ingress resources
 
 ### 1.19.1.0
 
