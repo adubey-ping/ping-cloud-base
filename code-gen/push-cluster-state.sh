@@ -183,7 +183,9 @@ REMOTE_BRANCHES=""
 
 # Get a list of the remote branches from the server.
 if ! ${DISABLE_GIT}; then
-  git pull &> /dev/null
+  if git name-rev @{u} > /dev/null 2>&1; then # check if upstream is set for current branch
+    git pull &> /dev/null
+  fi
   REMOTE_BRANCHES="$(git ls-remote --quiet --heads 2> /dev/null)"
   LS_REMOTE_EXIT_CODE=$?
 
