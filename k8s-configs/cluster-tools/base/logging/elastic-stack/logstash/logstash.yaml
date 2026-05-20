@@ -12,6 +12,20 @@ data:
     - pipeline.id: dlq
       path.config: "/usr/share/logstash/pipeline/dlq"
       pipeline.workers: 1
+    - pipeline.id: datalake
+      path.config: "/usr/share/logstash/pipeline/datalake"
+      pipeline.workers: 1
+---
+# datalake-s3-bucket holds the name of the S3 bucket in the CSG account where PF audit logs are
+# shipped by the datalake pipeline.
+# POC-ONLY: bucketName below is a developer test bucket. It MUST be replaced with the real CSG
+# account bucket name before deploying to any non-POC environment.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: datalake-s3-bucket
+data:
+  bucketName: adubey-telemetry-poc
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -269,6 +283,11 @@ spec:
                 configMapKeyRef:
                   name: cluster-info
                   key: cluster.name
+            - name: DATALAKE_S3_BUCKET_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: datalake-s3-bucket
+                  key: bucketName
           envFrom:
             - configMapRef:
                 name: elk-environment-variables

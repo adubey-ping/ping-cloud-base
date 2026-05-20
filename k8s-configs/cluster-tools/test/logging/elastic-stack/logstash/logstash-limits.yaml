@@ -70,3 +70,7 @@ data:
       pipeline.workers: 1
       # Batch 250 limits replay burst size during failure-path tests.
       pipeline.batch.size: 250
+    - pipeline.id: datalake
+      path.config: "/usr/share/logstash/pipeline/datalake"
+      pipeline.workers: 1
+      pipeline.batch.size: 250
