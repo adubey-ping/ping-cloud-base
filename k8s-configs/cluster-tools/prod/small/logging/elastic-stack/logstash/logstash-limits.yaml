@@ -70,3 +70,7 @@ data:
       pipeline.workers: 1
       # Smaller DLQ batch limits replay spikes.
       pipeline.batch.size: 250
+    - pipeline.id: datalake
+      path.config: "/usr/share/logstash/pipeline/datalake"
+      pipeline.workers: 1
+      pipeline.batch.size: 250

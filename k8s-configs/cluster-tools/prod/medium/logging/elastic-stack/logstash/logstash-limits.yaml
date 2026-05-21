@@ -67,3 +67,7 @@ data:
       pipeline.workers: 1
       # Batch 250 caps DLQ replay burst size.
       pipeline.batch.size: 250
+    - pipeline.id: datalake
+      path.config: "/usr/share/logstash/pipeline/datalake"
+      pipeline.workers: 1
+      pipeline.batch.size: 250
