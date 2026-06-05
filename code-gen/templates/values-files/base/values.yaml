@@ -265,6 +265,10 @@ global:
   healthchecksEnabled: ${HEALTHCHECKS_ENABLED}
 
   selfServiceTemplatesEnabled: ${SELF_SERVICE_TEMPLATES_ENABLED}
+
+  # Datalake pipeline enrichment fields
+  salesforceId: "${SALESFORCE_ID}"
+  datalakeBucketUri: "${DATALAKE_BUCKET_URI}"
   #####################################################################################################################
 
   ########################################################
