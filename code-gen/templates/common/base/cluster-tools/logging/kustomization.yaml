@@ -88,6 +88,17 @@ patchesStrategicMerge:
       ${IRSA_LOGSTASH_ANNOTATION_KEY_VALUE}
 
 - |-
+  # Add IRSA role annotation to logstash-elasic-compliance service account
+  apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    name: logstash-elasic-compliance
+    namespace: elastic-stack-logging
+    annotations:
+      purpose: service-account-for-logstash-elasic-compliance
+      ${IRSA_LOGSTASH_ANNOTATION_KEY_VALUE}
+
+- |-
   # Add IRSA role annotation to opensearch service account
   apiVersion: v1
   kind: ServiceAccount
