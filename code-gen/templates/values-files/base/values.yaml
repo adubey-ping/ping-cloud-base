@@ -266,9 +266,6 @@ global:
 
   selfServiceTemplatesEnabled: ${SELF_SERVICE_TEMPLATES_ENABLED}
 
-  # Telemetry pipeline enrichment fields
-  salesforceId: "${SALESFORCE_ID}"
-  telemetryBucketName: "${TELEMETRY_BUCKET_NAME}"
   #####################################################################################################################
 
   ########################################################
