@@ -510,6 +510,6 @@ subjects:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: logstash-elasic-compliance
+  name: logstash-elastic-compliance
   labels:
-    app: logstash-elasic-compliance
+    app: logstash-elastic-compliance
