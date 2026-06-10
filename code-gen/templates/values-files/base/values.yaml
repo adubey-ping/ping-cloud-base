@@ -266,9 +266,9 @@ global:
 
   selfServiceTemplatesEnabled: ${SELF_SERVICE_TEMPLATES_ENABLED}
 
-  # Datalake pipeline enrichment fields
+  # Telemetry pipeline enrichment fields
   salesforceId: "${SALESFORCE_ID}"
-  datalakeBucketUri: "${DATALAKE_BUCKET_URI}"
+  telemetryBucketName: "${TELEMETRY_BUCKET_NAME}"
   #####################################################################################################################
 
   ########################################################
