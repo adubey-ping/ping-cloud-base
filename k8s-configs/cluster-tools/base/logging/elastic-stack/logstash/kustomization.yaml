@@ -11,15 +11,6 @@ resources:
 - pdb.yaml
 - customer_pipelines
 
-generatorOptions:
-  disableNameSuffixHash: true
-
-configMapGenerator:
-- name: discovery-service
-  namespace: elastic-stack-logging
-  files:
-  - get_ssm_env_vars.sh=../../../../../ping-cloud/base/pingcommon/aws/scripts/get_ssm_env_vars.sh
-
 patchesStrategicMerge:
 # This patch is conditionally enabled by git-ops-command.sh
 # based on the ENABLE_IMPOSSIBLE_LOGIN_DASHBOARD flag (true/false).

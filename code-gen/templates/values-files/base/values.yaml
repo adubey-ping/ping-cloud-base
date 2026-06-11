@@ -265,7 +265,6 @@ global:
   healthchecksEnabled: ${HEALTHCHECKS_ENABLED}
 
   selfServiceTemplatesEnabled: ${SELF_SERVICE_TEMPLATES_ENABLED}
-
   #####################################################################################################################
 
   ########################################################

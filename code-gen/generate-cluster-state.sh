@@ -107,11 +107,6 @@
 # SALESFORCE_ID                    | The Salesforce ID for the customer, used as an     |
 #                                  | enrichment field in the datalake audit pipeline.   |
 #                                  |                                                    |
-# TELEMETRY_BUCKET_NAME            | The name of the telemetry S3 bucket. Provided as   | The string "ssm://pcpt/service/storage/telemetry-bucket/name".
-#                                  | an SSM path that will contain the S3 bucket name   |
-#                                  | and be replaced by discovery-service with the      |
-#                                  | actual bucket name used by hook scripts.           |
-#                                  |                                                    |
 # CLUSTER_STATE_REPO_URL           | The URL of the cluster-state repo.                 | https://github.com/pingidentity/ping-cloud-base
 #                                  |                                                    |
 # DEFAULT_CLUSTER_UPTIME           | The cluster default uptime used by kube-downscaler | Mon-Fri 09:00-:18:00 UTC
@@ -485,7 +480,6 @@ ${APP_RESYNC_SECONDS}
 ${CERT_RENEW_BEFORE}
 ${TELEPORT_RESOURCE_ID}
 ${SALESFORCE_ID}
-${TELEMETRY_BUCKET_NAME}
 ${STAGE}'
 
 # Variables to replace within the generated cluster state code
@@ -838,7 +832,6 @@ echo "Initial LOG_ARCHIVE_URL: ${LOG_ARCHIVE_URL}"
 echo "Initial BACKUP_URL: ${BACKUP_URL}"
 echo "Initial CONFIG_DATA_BUCKET_URI: ${CONFIG_DATA_BUCKET_URI}"
 echo "Initial SALESFORCE_ID: ${SALESFORCE_ID}"
-echo "Initial TELEMETRY_BUCKET_NAME: ${TELEMETRY_BUCKET_NAME}"
 
 echo "Initial MYSQL_SERVICE_HOST: ${MYSQL_SERVICE_HOST}"
 echo "Initial MYSQL_USER: ${MYSQL_USER}"
@@ -1038,7 +1031,6 @@ export HEALTHCHECKS_ENABLED="${HEALTHCHECKS_ENABLED:-false}"
 export CUSTOMER_PINGONE_ENABLED="${CUSTOMER_PINGONE_ENABLED:-false}"
 export ENABLE_IMPOSSIBLE_LOGIN_DASHBOARD="${ENABLE_IMPOSSIBLE_LOGIN_DASHBOARD:-false}"
 export SALESFORCE_ID="${SALESFORCE_ID:-""}"
-export TELEMETRY_BUCKET_NAME="${TELEMETRY_BUCKET_NAME:-"ssm://pcpt/service/storage/telemetry-bucket/name"}"
 
 # For SELF_SERVICE_TEMPLATES_ENABLED, we want to default it to true for new clusters but false for upgrades,
 # since we don't want to introduce new functionality via an upgrade without explicit opt-in.
@@ -1184,7 +1176,6 @@ echo "Using LOG_ARCHIVE_URL: ${LOG_ARCHIVE_URL}"
 echo "Using BACKUP_URL: ${BACKUP_URL}"
 echo "Using CONFIG_DATA_BUCKET_URI: ${CONFIG_DATA_BUCKET_URI}"
 echo "Using SALESFORCE_ID: ${SALESFORCE_ID}"
-echo "Using TELEMETRY_BUCKET_NAME: ${TELEMETRY_BUCKET_NAME}"
 
 echo "Using MYSQL_SERVICE_HOST: ${MYSQL_SERVICE_HOST}"
 echo "Using MYSQL_USER: ${MYSQL_USER}"
