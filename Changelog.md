@@ -21,6 +21,7 @@
 - Rework, and add integration tests for logging stack
 - Update argocd-init-tools version
 - Remove helm-command.sh since old Kustomize version no longer used
+- Obtain Salesforce ID from SSM param for logstash compliance
 
 _Changes:_
 
@@ -43,6 +44,7 @@ _Changes:_
 - [X] PDO-12181 Implement Logging tier patches for OpenSearch Chart
 - [X] PDO-12227 CI/CD Pipeline: Stabilize logging integration tests
 - [X] PDO-12265 Update argocd-init-tools
+- [X] PDO-12393 Obtain Salesforce ID from SSM param for logstash compliance
 
 ### 2.3.0
 
