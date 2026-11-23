@@ -5,7 +5,8 @@ metadata:
   name: customer-p1-connection
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-options: Replace=true
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
   labels:
     role: customer-p1-connection
 spec:
